@@ -5,12 +5,13 @@
   <meta charset="utf-8"/>
   <meta lang="fr"/>
   <link rel="stylesheet" type="text/css" href="style/index.css"/>
+  <link rel="icon" type="image/x-icon" href="assets/ghost.png"/>
 </head>
 <body>
   <main>
 
     <div class="overlay">
-      <div class="types flex">
+      <div id="overlay-types" class="types flex">
         <img id="o-insect" class="img --hidden" src="assets/insect.png" alt="pokémon type insecte">
         <img id="o-dragon" class="img --hidden" src="assets/dragon.png" alt="pokémon type dragon">
         <img id="o-fairy" class="img --hidden" src="assets/fairy.png" alt="pokémon type fée">
@@ -63,6 +64,11 @@
         <label for="type-gap" class="label__range">Espacement entre les icônes</label>
         <input id="type-gap" name="type-gap" value="10" type="range" min="0" max="30" step="1" oninput="this.nextElementSibling.value = this.value">
         <output id="type-gap--result">10</output><span>px</span>
+      </div>
+      <div>
+        <label for="type-break" class="label__range">Nombre d'icônes par ligne</label>
+        <input id="type-break" name="type-break" value="9" type="range" min="1" max="18" step="1" oninput="this.nextElementSibling.value = this.value">
+        <output id="type-break--result">9</output>
       </div>
     </div>
 
