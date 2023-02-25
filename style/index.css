@@ -54,12 +54,15 @@ h2 {
   box-shadow: rgba(200, 200, 200, .4) 2px 2px;
 }
 
+#overlay-types > img {
+  box-shadow: none;
+}
+
 .label__range {
   display: block;
   margin-bottom: 5px;
 }
 
 .--hidden {
-  /* opacity: 30%; */
   display: none;
 }
