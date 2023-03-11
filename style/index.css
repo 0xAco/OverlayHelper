@@ -210,4 +210,20 @@ button {
 
 .btn-reset {
   margin-left: 20px;
+  background-color: transparent;
+  color: inherit;
+  transition: background-color 1s ease-in-out;
+  transition: color .5s ease-in-out;
+}
+
+.btn-reset:hover {
+  background-color: hsl(0, 88%, 17%);
+  color: white;
+}
+
+.filter-select {
+  padding: 4px 10px;
+  border-radius: 30px;
+  outline: none;
+  margin-bottom: 10px;
 }
