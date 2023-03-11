@@ -134,11 +134,16 @@ button {
   margin: -1px;
 }
 
-.random-pokemon {
-  position: relative;
+.random-pokemon__display {
+  position: sticky;
+  top: 0;
   padding: 8px 10px;
   width: 300px;
   height: 400px;
+}
+
+.random-pokemon__filters {
+  padding: 20px 0;
 }
 
 #btn--search {
@@ -174,4 +179,35 @@ button {
 
 .pokemon-infos .pokemon-name {
   font-weight: bold;
+}
+
+.no-result {
+  padding: 13px 0;
+  height: 50px;
+  width: 175px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 30px;
+  background-color: white;
+  border: solid 1px #72683e;
+  color: #403c36;
+  outline: none;
+  padding: 6px 8px;
+  flex-grow: 0;
+  height: fit-content;
+}
+
+.title {
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.btn-reset {
+  margin-left: 20px;
 }

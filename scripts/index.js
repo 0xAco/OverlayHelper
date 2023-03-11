@@ -7,7 +7,14 @@ const separator = document.getElementById('separator');
 const sliderTypeSize = document.getElementById('type-size');
 const sliderTypeGap = document.getElementById('type-gap');
 const sliderTypeBreak = document.getElementById('type-break');
+const randomPokemonOutput = document.getElementById('random-pokemon__output')
 const btnSearch = document.getElementById('btn--search');
+const filterType1 = document.getElementById('random-pokemon__type1');
+const filterType2 = document.getElementById('random-pokemon__type2');
+const filterLevitating = document.getElementById('isLevitating');
+const filterLegendary = document.getElementById('isLegendary');
+const filterStarter = document.getElementById('isStarter');
+const btnReset = document.getElementById('btn--reset');
 
 // data setup
 let paldeaDex = paldeaPokedex; // added from script
@@ -17,10 +24,11 @@ document.addEventListener('click', event => {
   if (!event.target.matches('.img')) return;
   this.onImageClick(event.target.id);
 });
-btnSearch.addEventListener('click', searchRandom);
+btnSearch.addEventListener('click', evt => searchRandom(getSearchFilters()));
 sliderTypeSize.addEventListener('change', evt => onChangeRange(evt.target.id));
 sliderTypeGap.addEventListener('change', evt => onChangeRange(evt.target.id));
 sliderTypeBreak.addEventListener('change', evt => onChangeRange(evt.target.id));
+btnReset.addEventListener('click', evt => resetFilters());
 
 // functions
 function onImageClick(id) {
@@ -49,7 +57,7 @@ function refreshBreaks() {
   removeElementsByClassname('flex-break');
 
   // add breaks if needed
-  const selected = document.querySelectorAll('#overlay-types img:not(.--hidden)');
+  const selected = document.querySelectorany('#overlay-types img:not(.--hidden)');
   if (selected.length > nbBreaks) {
     const parent = document.getElementById('overlay-types');
     const createEl = () => {
@@ -92,14 +100,70 @@ function onChangeRange(id) {
 }
 
 function randomInt(min, max) {
-  return Math.floor(Math.random() * (max + min) + min);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function searchRandom() {
-  // pick random id + retrieve pokemon info
-  const pokemonId = randomInt(1, 400);
-  const hits = paldeaDex.filter(pok => pok.regid === pokemonId);
-  const chosen = hits.length > 1 ? hits[randomInt(0, hits.length - 1)] : hits[0];
+function resetFilters() {
+  filterType1.selectedIndex = 0;
+  filterType2.selectedIndex = 0;
+  filterLevitating.checked = false;
+  filterLegendary.checked = false;
+  filterStarter.checked = false;
+}
+
+function getSearchFilters() {
+  return {
+    type1: filterType1.value,
+    type2: filterType2.value,
+    isLevitating: filterLevitating.checked,
+    isLegendary: filterLegendary.checked,
+    isStarter: filterStarter.checked,
+  }
+}
+
+function searchRandom(filters) {
+  // compute filters
+  const computeFilters = (pok, filters) => {
+    if (filters.type1 === 'any' && filters.type2 === 'any' && !filters.isLevitating && !filters.isLegendary && !filters.isStarter)
+      return true;
+    
+    let typeCondition = true;
+    if (!(filters.type1 === 'any' && filters.type2 === 'any')) {
+      const t1 = filters.type1;
+      const t2 = filters.type2;
+      if (t1 !== 'any' && t2 !=='any') // both types are specified
+        if (t1 == t2) typeCondition = pok.types.includes(t1) && pok.types.length === 1;
+        else typeCondition = pok.types.includes(t1) && pok.types.includes(t2);
+      else if (t1 !== 'any') // filter on t1
+        typeCondition = pok.types.includes(t1)
+      else // filter on t2
+        typeCondition = pok.types.includes(t2)
+    }
+
+    let levitatingCondition = true;
+    if (filters.isLevitating)
+      levitatingCondition = pok.types.includes('vol') || pok.abilities.filter(ab => ab.name === 'lévitation').length > 0
+
+    let legendaryCondition = true;
+    if (filters.isLegendary) legendaryCondition = pok.legendary
+
+    let starterCondition = true;
+    if (filters.isStarter) starterCondition = pok.starter
+
+    return typeCondition && levitatingCondition && legendaryCondition && starterCondition;
+  }
+
+  // apply filters to list
+  const hits = paldeaDex.filter(pok => computeFilters(pok, filters));
+  const chosen = hits.length > 0 ? hits[randomInt(0, hits.length - 1)] : null;
+
+  if (chosen == null) {
+    let noResultElement = document.createElement('p');
+    noResultElement.classList.add('no-result');
+    noResultElement.innerText = 'Aucun résultat';
+    randomPokemonOutput.replaceChildren(noResultElement);
+    return;
+  }
 
   // add img to the page
   let pokemonElement = document.createElement('div');
@@ -114,7 +178,7 @@ function searchRandom() {
       <span class="pokemon-name">${chosen.namefr}</span>
     </div>
   `;
-  document.getElementById('random-pokemon__output').replaceChildren(pokemonElement);
+  randomPokemonOutput.replaceChildren(pokemonElement);
 }
 
 function dragElement(element) {
@@ -124,9 +188,9 @@ function dragElement(element) {
   function onMouseDown(e) {
     md = {
       e,
-      offsetLeft:  element.offsetLeft,
-      offsetTop:   element.offsetTop,
-      firstWidth:  leftPanel.offsetWidth,
+      offsetLeft: element.offsetLeft,
+      offsetTop: element.offsetTop,
+      firstWidth: leftPanel.offsetWidth,
       secondWidth: rightPanel.offsetWidth
     };
 
@@ -142,7 +206,7 @@ function dragElement(element) {
       y: e.clientY - md.e.clientY
     };
 
-    // Prevent negative-sized elements
+    // prevent negative-sized elements
     delta.x = Math.min(
       Math.max(delta.x, -md.firstWidth),
       md.secondWidth
@@ -153,6 +217,5 @@ function dragElement(element) {
     rightPanel.style.width = (md.secondWidth - delta.x) + "px";
   }
 }
-
 
 dragElement(separator);

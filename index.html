@@ -79,10 +79,73 @@
 
       <!-- RIGHT COLUMN -->
       <div class="column --right">
-        <div class="random-pokemon flex--column --center hexbg--blurred">
-          <output id="random-pokemon__output"></output>
-          <button id="btn--search">Chercher un pokémon aléatoire</button>
-        </div>
+        <section class="random-pokemon">
+          <div class="random-pokemon__display flex--column --center hexbg--blurred">
+            <output id="random-pokemon__output"></output>
+            <button id="btn--search">Chercher un pokémon aléatoire</button>
+          </div>
+          <div class="random-pokemon__filters">
+            <div class="flex title">
+              <h2>Filtres</h2>
+              <button id="btn--reset" class="btn btn-reset">reset</button>
+            </div>
+            <label for="random-pokemon__type1">Types :</label>
+            <select name="type1" id="random-pokemon__type1">
+              <option value="any">Tous</option>
+              <option value="insecte">insecte</option>
+              <option value="dragon">dragon</option>
+              <option value="fée">fée</option>
+              <option value="feu">feu</option>
+              <option value="spectre">spectre</option>
+              <option value="sol">sol</option>
+              <option value="normal">normal</option>
+              <option value="psy">psy</option>
+              <option value="acier">acier</option>
+              <option value="ténèbre">ténèbre</option>
+              <option value="électrik">électrik</option>
+              <option value="combat">combat</option>
+              <option value="vol">vol</option>
+              <option value="plante">plante</option>
+              <option value="glace">glace</option>
+              <option value="poison">poison</option>
+              <option value="roche">roche</option>
+              <option value="eau">eau</option>
+            </select>
+            <select name="type2" id="random-pokemon__type2">
+              <option value="any">Tous</option>
+              <option value="insecte">insecte</option>
+              <option value="dragon">dragon</option>
+              <option value="fée">fée</option>
+              <option value="feu">feu</option>
+              <option value="spectre">spectre</option>
+              <option value="sol">sol</option>
+              <option value="normal">normal</option>
+              <option value="psy">psy</option>
+              <option value="acier">acier</option>
+              <option value="ténèbre">ténèbre</option>
+              <option value="électrik">électrik</option>
+              <option value="combat">combat</option>
+              <option value="vol">vol</option>
+              <option value="plante">plante</option>
+              <option value="glace">glace</option>
+              <option value="poison">poison</option>
+              <option value="roche">roche</option>
+              <option value="eau">eau</option>
+            </select>
+          </div>
+          <div class="input--group">
+            <input id="isLevitating" type="checkbox" value="isLevitating"/>
+            <label for="isLevitating">doit léviter</label>
+          </div>
+          <div class="input--group">
+            <input id="isLegendary" type="checkbox" value="isLegendary"/>
+            <label for="isLegendary">doit être Légendaire ou Fabuleux</label>
+          </div>
+          <div class="input--group">
+            <input id="isStarter" type="checkbox" value="isStarter"/>
+            <label for="isStarter">doit être un starter</label>
+          </div>
+        </section>
       </div>
     </div>
 
