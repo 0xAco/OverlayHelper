@@ -224,5 +224,6 @@ button {
   padding: 4px 10px;
   border-radius: 30px;
   outline: none;
+  margin-top: 3px;
   margin-bottom: 10px;
 }

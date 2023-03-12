@@ -14,6 +14,7 @@ const filterType2 = document.getElementById('random-pokemon__type2');
 const filterLevitating = document.getElementById('isLevitating');
 const filterLegendary = document.getElementById('isLegendary');
 const filterStarter = document.getElementById('isStarter');
+const filterFirstGen = document.getElementById('random-pokemon__gen');
 const btnReset = document.getElementById('btn--reset');
 
 // data setup
@@ -109,6 +110,7 @@ function resetFilters() {
   filterLevitating.checked = false;
   filterLegendary.checked = false;
   filterStarter.checked = false;
+  filterFirstGen.selectedIndex = 0;
 }
 
 function getSearchFilters() {
@@ -118,13 +120,14 @@ function getSearchFilters() {
     isLevitating: filterLevitating.checked,
     isLegendary: filterLegendary.checked,
     isStarter: filterStarter.checked,
+    firstGen: filterFirstGen.value,
   }
 }
 
 function searchRandom(filters) {
   // compute filters
   const computeFilters = (pok, filters) => {
-    if (filters.type1 === 'any' && filters.type2 === 'any' && !filters.isLevitating && !filters.isLegendary && !filters.isStarter)
+    if (filters.type1 === 'any' && filters.type2 === 'any' && !filters.isLevitating && !filters.isLegendary && !filters.isStarter && filters.firstGen === 'any')
       return true;
     
     let typeCondition = true;
@@ -135,22 +138,24 @@ function searchRandom(filters) {
         if (t1 == t2) typeCondition = pok.types.includes(t1) && pok.types.length === 1;
         else typeCondition = pok.types.includes(t1) && pok.types.includes(t2);
       else if (t1 !== 'any') // filter on t1
-        typeCondition = pok.types.includes(t1)
+        typeCondition = pok.types.includes(t1);
       else // filter on t2
-        typeCondition = pok.types.includes(t2)
+        typeCondition = pok.types.includes(t2);
     }
 
     let levitatingCondition = true;
-    if (filters.isLevitating)
-      levitatingCondition = pok.types.includes('vol') || pok.abilities.filter(ab => ab.name === 'lévitation').length > 0
+    if (filters.isLevitating) levitatingCondition = pok.types.includes('vol') || pok.abilities.filter(ab => ab.name === 'lévitation').length > 0;
 
     let legendaryCondition = true;
-    if (filters.isLegendary) legendaryCondition = pok.legendary
+    if (filters.isLegendary) legendaryCondition = pok.legendary;
 
     let starterCondition = true;
-    if (filters.isStarter) starterCondition = pok.starter
+    if (filters.isStarter) starterCondition = pok.starter;
 
-    return typeCondition && levitatingCondition && legendaryCondition && starterCondition;
+    let firstGenCondition = true;
+    if (filters.firstGen) firstGenCondition = pok.apparitiongen === filters.firstGen;
+
+    return typeCondition && levitatingCondition && legendaryCondition && starterCondition && firstGenCondition;
   }
 
   // apply filters to list
