@@ -3330,11 +3330,7 @@ const paldeaPokedex =
     "apparitiongen": "3",
     "egggroups": [
       "amorphe",
-      "humanoïde",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "humanoïde"
     ],
     "ev": [
       {
@@ -3390,11 +3386,7 @@ const paldeaPokedex =
     "apparitiongen": "3",
     "egggroups": [
       "amorphe",
-      "humanoïde",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "humanoïde"
     ],
     "ev": [
       {
@@ -3450,11 +3442,7 @@ const paldeaPokedex =
     "apparitiongen": "3",
     "egggroups": [
       "amorphe",
-      "humanoïde",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "humanoïde"
     ],
     "ev": [
       {
@@ -3500,7 +3488,7 @@ const paldeaPokedex =
       },
       {
         "hidden": false,
-        "name": "incisif   (génération 9)"
+        "name": "incisif (génération 9)"
       },
       {
         "hidden": true,
@@ -3510,11 +3498,7 @@ const paldeaPokedex =
     "apparitiongen": "4",
     "egggroups": [
       "amorphe",
-      "humanoïde",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "humanoïde"
     ],
     "ev": [
       {
@@ -3762,7 +3746,7 @@ const paldeaPokedex =
       },
       {
         "hidden": false,
-        "name": "lévitation   (générations 3 à 6)"
+        "name": "lévitation (générations 3 à 6)"
       }
     ],
     "apparitiongen": "1",
@@ -4742,7 +4726,7 @@ const paldeaPokedex =
       },
       {
         "hidden": false,
-        "name": "tempo perso   (spécial)"
+        "name": "tempo perso (spécial)"
       }
     ],
     "apparitiongen": "7",
@@ -16822,11 +16806,7 @@ const paldeaPokedex =
     "apparitiongen": "6",
     "egggroups": [
       "humanoïde",
-      "aérien",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "aérien"
     ],
     "ev": [
       {
@@ -16937,11 +16917,7 @@ const paldeaPokedex =
     "apparitiongen": "6",
     "egggroups": [
       "aérien",
-      "draconique",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "draconique"
     ],
     "ev": [
       {
@@ -16997,11 +16973,7 @@ const paldeaPokedex =
     "apparitiongen": "6",
     "egggroups": [
       "aérien",
-      "draconique",
-      " ",
-      "(depuis ",
-      "épée et bouclier",
-      ")"
+      "draconique"
     ],
     "ev": [
       {
@@ -19765,7 +19737,7 @@ const paldeaPokedex =
       },
       {
         "hidden": false,
-        "name": "chasse-neige   (génération 7)"
+        "name": "chasse-neige (génération 7)"
       },
       {
         "hidden": true,
@@ -19819,7 +19791,7 @@ const paldeaPokedex =
       },
       {
         "hidden": false,
-        "name": "chasse-neige   (génération 7)"
+        "name": "chasse-neige (génération 7)"
       },
       {
         "hidden": true,
@@ -20199,13 +20171,7 @@ const paldeaPokedex =
     "apparitiongen": "6",
     "egggroups": [
       "monstrueux",
-      "minéral",
-      " ",
-      "(depuis ",
-      "pokémon épée",
-      " et ",
-      "bouclier",
-      ")"
+      "minéral"
     ],
     "ev": [
       {
@@ -20260,13 +20226,7 @@ const paldeaPokedex =
     "apparitiongen": "6",
     "egggroups": [
       "monstrueux",
-      "minéral",
-      " ",
-      "(depuis ",
-      "pokémon épée",
-      " et ",
-      "bouclier",
-      ")"
+      "minéral"
     ],
     "ev": [
       {

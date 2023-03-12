@@ -3329,11 +3329,7 @@
   "apparitiongen": "3",
   "egggroups": [
     "amorphe",
-    "humanoïde",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "humanoïde"
   ],
   "ev": [
     {
@@ -3389,11 +3385,7 @@
   "apparitiongen": "3",
   "egggroups": [
     "amorphe",
-    "humanoïde",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "humanoïde"
   ],
   "ev": [
     {
@@ -3449,11 +3441,7 @@
   "apparitiongen": "3",
   "egggroups": [
     "amorphe",
-    "humanoïde",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "humanoïde"
   ],
   "ev": [
     {
@@ -3499,7 +3487,7 @@
     },
     {
       "hidden": false,
-      "name": "incisif   (génération 9)"
+      "name": "incisif (génération 9)"
     },
     {
       "hidden": true,
@@ -3509,11 +3497,7 @@
   "apparitiongen": "4",
   "egggroups": [
     "amorphe",
-    "humanoïde",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "humanoïde"
   ],
   "ev": [
     {
@@ -3761,7 +3745,7 @@
     },
     {
       "hidden": false,
-      "name": "lévitation   (générations 3 à 6)"
+      "name": "lévitation (générations 3 à 6)"
     }
   ],
   "apparitiongen": "1",
@@ -4741,7 +4725,7 @@
     },
     {
       "hidden": false,
-      "name": "tempo perso   (spécial)"
+      "name": "tempo perso (spécial)"
     }
   ],
   "apparitiongen": "7",
@@ -16821,11 +16805,7 @@
   "apparitiongen": "6",
   "egggroups": [
     "humanoïde",
-    "aérien",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "aérien"
   ],
   "ev": [
     {
@@ -16936,11 +16916,7 @@
   "apparitiongen": "6",
   "egggroups": [
     "aérien",
-    "draconique",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "draconique"
   ],
   "ev": [
     {
@@ -16996,11 +16972,7 @@
   "apparitiongen": "6",
   "egggroups": [
     "aérien",
-    "draconique",
-    " ",
-    "(depuis ",
-    "épée et bouclier",
-    ")"
+    "draconique"
   ],
   "ev": [
     {
@@ -19764,7 +19736,7 @@
     },
     {
       "hidden": false,
-      "name": "chasse-neige   (génération 7)"
+      "name": "chasse-neige (génération 7)"
     },
     {
       "hidden": true,
@@ -19818,7 +19790,7 @@
     },
     {
       "hidden": false,
-      "name": "chasse-neige   (génération 7)"
+      "name": "chasse-neige (génération 7)"
     },
     {
       "hidden": true,
@@ -20198,13 +20170,7 @@
   "apparitiongen": "6",
   "egggroups": [
     "monstrueux",
-    "minéral",
-    " ",
-    "(depuis ",
-    "pokémon épée",
-    " et ",
-    "bouclier",
-    ")"
+    "minéral"
   ],
   "ev": [
     {
@@ -20259,13 +20225,7 @@
   "apparitiongen": "6",
   "egggroups": [
     "monstrueux",
-    "minéral",
-    " ",
-    "(depuis ",
-    "pokémon épée",
-    " et ",
-    "bouclier",
-    ")"
+    "minéral"
   ],
   "ev": [
     {
