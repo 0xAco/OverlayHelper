@@ -153,7 +153,7 @@ function searchRandom(filters) {
     if (filters.isStarter) starterCondition = pok.starter;
 
     let firstGenCondition = true;
-    if (filters.firstGen) firstGenCondition = pok.apparitiongen === filters.firstGen;
+    if (filters.firstGen !== 'any') firstGenCondition = pok.apparitiongen === filters.firstGen;
 
     return typeCondition && levitatingCondition && legendaryCondition && starterCondition && firstGenCondition;
   }
