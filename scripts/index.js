@@ -58,7 +58,7 @@ function refreshBreaks() {
   removeElementsByClassname('flex-break');
 
   // add breaks if needed
-  const selected = document.querySelectorany('#overlay-types img:not(.--hidden)');
+  const selected = document.querySelectorAll('#overlay-types img:not(.--hidden)');
   if (selected.length > nbBreaks) {
     const parent = document.getElementById('overlay-types');
     const createEl = () => {
