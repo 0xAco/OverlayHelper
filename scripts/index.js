@@ -4,9 +4,13 @@
 const leftPanel  = document.querySelector(".--left");
 const rightPanel = document.querySelector(".--right");
 const separator = document.getElementById('separator');
+
+const overlayTypes = document.getElementById('overlay-types');
 const sliderTypeSize = document.getElementById('type-size');
 const sliderTypeGap = document.getElementById('type-gap');
 const sliderTypeBreak = document.getElementById('type-break');
+const typeReverseCheckbox = document.getElementById('type-reverse');
+
 const randomPokemonOutput = document.getElementById('random-pokemon__output')
 const btnSearch = document.getElementById('btn--search');
 const filterType1 = document.getElementById('random-pokemon__type1');
@@ -29,6 +33,7 @@ btnSearch.addEventListener('click', evt => searchRandom(getSearchFilters()));
 sliderTypeSize.addEventListener('change', evt => onChangeRange(evt.target.id));
 sliderTypeGap.addEventListener('change', evt => onChangeRange(evt.target.id));
 sliderTypeBreak.addEventListener('change', evt => onChangeRange(evt.target.id));
+typeReverseCheckbox.addEventListener('change', evt => reverseTypes());
 btnReset.addEventListener('click', evt => resetFilters());
 
 // functions
@@ -98,6 +103,16 @@ function onChangeRange(id) {
   } else refreshBreaks();
 
   return;
+}
+
+function reverseTypes() {
+  if (typeReverseCheckbox.checked) {
+    if (!overlayTypes.classList.contains('--reverse'))
+      overlayTypes.classList.add('--reverse');
+  } else {
+    if (overlayTypes.classList.contains('--reverse'))
+      overlayTypes.classList.remove('--reverse');
+  }
 }
 
 function randomInt(min, max) {

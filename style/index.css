@@ -36,6 +36,13 @@ button {
   height: 0;
 }
 
+.--reverse {
+  flex-flow: wrap-reverse;
+  bottom: 20px;
+  left: 40px;
+  position: absolute;
+}
+
 .column.--left {
   flex-basis: 50%;
   flex-grow: 1;
